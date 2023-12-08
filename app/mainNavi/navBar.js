@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const NavBar = () => {
     return (
@@ -7,7 +8,7 @@ const NavBar = () => {
             <div className="flex">
                 <h1 className=" text-5xl font-serif ml-2"><Link href="/">GameDB</Link></h1>
             </div>
-            <img src="/assets/Picture1.png" alt="logo" className=" h-full" />
+            <Image width={100} height={50} src="/assets/Picture1.png" alt="logo" className=" h-full" />
             <div>
                 <ul className="flex text-xl">
                     <li className="mr-10 hover:scale-110 duration-200">

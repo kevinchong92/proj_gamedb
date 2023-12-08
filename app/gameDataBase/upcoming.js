@@ -34,8 +34,8 @@ export default function UpcomingGames() {
             <ul className=''>
                 <div className='grid grid-cols-3 gap-8 px-12'>
                     {games.map((game, index) => (
-                        <div className=''>
-                            <li key={index} className=" shadow-orange-700 shadow-lg h-full rounded-xl">
+                        <div key={index} className=''>
+                            <li className=" shadow-orange-700 shadow-lg h-full rounded-xl">
                                 <img className=' w-full rounded-t-xl' src={game.background_image} alt={game.name} />
                                 <h2 className="text-2xl font-bold ml-1">{game.name}</h2>
                                 <p className=' ml-1'>Release Date: {game.released}</p>
