@@ -1,11 +1,10 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
 import React from 'react'
 import UpcomingGames from './gameDataBase/upcoming'
 import NewLaunch from './gameDataBase/newLaunch'
 import NavBar from './mainNavi/navBar'
-
+import Footer from './mainNavi/footer'
 
 export default function Home() {
   return (
@@ -17,6 +16,7 @@ export default function Home() {
         <h1 className="text-3xl mb-8 mt-8 text-center underline underline-offset-8">Upcoming Games</h1>
         <UpcomingGames />
       </div>
+      <Footer />
     </main>
   )
 }

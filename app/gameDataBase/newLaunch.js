@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import React from 'react';
 
 async function fetchGames() {
     const today = new Date().toISOString().split('T')[0];
