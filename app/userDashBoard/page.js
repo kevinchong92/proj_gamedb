@@ -2,6 +2,8 @@
 
 import { useUserAuth } from './_utils/auth-context';
 import Link from 'next/link';
+import React from 'react';
+import NavBar from '../mainNavi/navBar';
 
 export default function UserDashBoard() {
 
@@ -16,8 +18,9 @@ export default function UserDashBoard() {
     }
 
     return (
-        <>
-            <div>
+        <main>
+            <NavBar />
+            <div className=' mt-20'>
                 <h1 className="text-3xl mb-8">This is the UserDashBoard</h1>
                 <p className="text-xl">You are currently signed in as {user?.email}</p>
                 <button className="block bg-orange-400 m-4 p-2 w-60 hover:bg-orange-600" onClick={handleSignIn}>Sign in with GitHub</button>
@@ -29,6 +32,6 @@ export default function UserDashBoard() {
                     <p>Home</p>
                 </Link>
             </div>}
-        </>
+        </main>
     )
 }
