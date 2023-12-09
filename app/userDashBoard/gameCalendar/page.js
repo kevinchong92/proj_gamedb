@@ -7,6 +7,7 @@ import NavBar from "@/app/mainNavi/navBar.js";
 import Link from 'next/link';
 import GamesCalendar from './gamesCalendar';
 import Login from '../login';
+import Footer from '@/app/mainNavi/footer';
 
 const GamesList = () => {
     const [games, setGames] = useState([]);
@@ -94,34 +95,37 @@ const GamesList = () => {
         <main>
             <NavBar />
             <Login />
-            <div className='mt-8'>
-                <GamesCalendar games={games} />
-            </div>
-            <h2 className="text-3xl mt-8">My Games</h2>
-            <ul className=' mt-20'>
-                <div className='grid grid-cols-3 gap-8 px-12'>
-                    {games.map((game, index) => (
-                        <div key={index} style={gameItemContainerStyle}>
-                            <li className="shadow-orange-700 shadow-lg h-full rounded-xl">
-                                <img className='w-full rounded-t-xl' src={game.data.background_image} alt={game.data.name} />
-                                <h3 className="text-2xl font-bold ml-1">{game.data.name}</h3>
-                                <p className='ml-1'>Release Date: {game.data.released}</p>
-                                <div>
-                                    {game.data.platforms && game.data.platforms.map((platform, idx) => (
-                                        <span className='m-4 ml-1' key={idx}>{platform}</span>
-                                    ))}
-                                </div>
-                                <button
-                                    onClick={() => handleDeleteGame(game.id)}
-                                    style={deleteButtonStyle}
-                                >
-                                    Delete
-                                </button>
-                            </li>
-                        </div>
-                    ))}
+            <div className='pb-8 h-full w-full bg-gradient-to-b from-black to-gray-600'>
+                <div className='mt-8'>
+                    <GamesCalendar games={games} />
                 </div>
-            </ul>
+                <h2 className="text-3xl mt-8">My Games</h2>
+                <ul className=' mt-20'>
+                    <div className='grid grid-cols-3 gap-8 px-12'>
+                        {games.map((game, index) => (
+                            <div key={index} style={gameItemContainerStyle}>
+                                <li className="shadow-orange-700 shadow-lg h-full rounded-xl">
+                                    <img className='w-full rounded-t-xl' src={game.data.background_image} alt={game.data.name} />
+                                    <h3 className="text-2xl font-bold ml-1">{game.data.name}</h3>
+                                    <p className='ml-1'>Release Date: {game.data.released}</p>
+                                    <div>
+                                        {game.data.platforms && game.data.platforms.map((platform, idx) => (
+                                            <span className='m-4 ml-1' key={idx}>{platform}</span>
+                                        ))}
+                                    </div>
+                                    <button
+                                        onClick={() => handleDeleteGame(game.id)}
+                                        style={deleteButtonStyle}
+                                    >
+                                        Delete
+                                    </button>
+                                </li>
+                            </div>
+                        ))}
+                    </div>
+                </ul>
+            </div>
+            <Footer />
         </main>
     );
 };
